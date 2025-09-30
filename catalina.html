@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para ti Catalina 💜</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f172a; /* Fondo azul minimalista */
+      color: #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 25px 0;
+      text-align: center;
+      color: #a855f7;
+    }
+
+    /* --- Carta romántica estilo minimalista --- */
+    .carta-romantica {
+      max-width: 950px;
+      margin: 20px auto 40px;
+      padding: 35px;
+      border-radius: 18px;
+      background: #1e293b;
+      font-family: 'Georgia', serif;
+      font-size: 1.2rem;
+      line-height: 1.9;
+      color: #f1f5f9;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      text-align: justify;
+    }
+
+    .carta-romantica h2 {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2rem;
+      color: #d946ef;
+      margin-bottom: 15px;
+    }
+
+    .carta-romantica strong {
+      color: #a855f7;
+      font-size: 1.3rem;
+    }
+
+    .firma {
+      margin-top: 20px;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 1.5rem;
+      text-align: right;
+      color: #d946ef;
+    }
+
+    /* --- Estilo tarjetas --- */
+    .card {
+      background: #111827;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #a855f7;
+    }
+
+    .frase, .razon, .gustar {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-style: italic;
+      color: #ffffff; /* Texto blanco */
+    }
+
+    .contador {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 15px;
+    }
+
+    /* --- Botones estilo pill --- */
+    .controls {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 8px;
+      background: #1f2937;
+      color: #e2e8f0;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    button:hover {
+      background: #374151;
+      transform: scale(1.05);
+    }
+
+    .btn-purple {
+      background: #a855f7;
+      color: #fff;
+    }
+    .btn-purple:hover {
+      background: #9333ea;
+    }
+  </style>
+</head>
+<body>
+  <!-- Carta romántica -->
+  <div class="carta-romantica">
+    <h2>Querida Catalina:</h2>
+    <p>Sé que estamos pasando por un momento complicado en la relación, sé que estamos muy mal, sé que te he hecho sentir mal con tu físico, sé que he cometido muchos errores.</p>
+    <p>Pero yo te amo. Tomé un tiempo para poder hacerte esta página web, para que puedas leer diario una frase linda para ti y una razón por la que quiero quedarme contigo.</p>
+    <p>Si te aburriste de que te diga “me gustas” por chat, escribiré una razón aquí hasta que me creas o hasta que me muera 💀.</p>
+    <p>Quiero que esta página sea un recordatorio de cuánto te amo y de que estoy aquí para aprender a ser mejor cada día contigo.</p>
+    <p>No quiero que esto sea un detalle pasajero, quiero que lo leas y sientas que tienes a alguien que nunca se rendirá en amarte.</p>
+    <p>Sé que en muchas ocasiones mis palabras no reflejan en absoluto lo mucho que te amo y me duele haberte hecho sentir menos de lo que eres, <strong>LA PERSONA MÁS HERMOSA PARA MÍ.</strong></p>
+    <p>Si te sientes gordita que más da, eres mi gordita hermosa. Tu físico me encanta, me gustaste desde la primera noche que pasamos juntos y desde aquella vez no he podido verme sin ti.</p>
+    <p>Mi intencion nunca sera hacerte sentir insegura solo quiero hacerte sacar una sonrisa, yo te amo a ti y amo a tus rollitos.</p>
+    <p>En este rincón web escribiré una frase y una razón diaria. Eres libre de entrar y revisarlas cuando tú desees, espero poder llegar a la frase un millón.</p>
+    <div class="firma">Con amor ,<br>Deavid 💜</div>
+  </div>
+
+  <h1>Para ti Catalina 💜</h1>
+
+  <!-- Tarjeta Frase -->
+  <div class="card">
+    <h2>Frase del día</h2>
+    <p class="frase" id="frase"></p>
+    <p class="contador" id="contadorFrase"></p>
+    <div class="controls">
+      <button onclick="anterior('frase')">◀ Anterior</button>
+      <button onclick="siguiente('frase')">Siguiente ▶</button>
+      <button class="btn-purple" onclick="aleatorio('frase')">Frase Aleatoria</button>
+      <button onclick="copiar('frase')">Copiar</button>
+    </div>
+  </div>
+
+  <!-- Tarjeta Razón -->
+  <div class="card">
+    <h2>Razón por la que Te amo</h2>
+    <p class="razon" id="razon"></p>
+    <p class="contador" id="contadorRazon"></p>
+    <div class="controls">
+      <button onclick="anterior('razon')">◀ Anterior</button>
+      <button onclick="siguiente('razon')">Siguiente ▶</button>
+      <button class="btn-purple" onclick="aleatorio('razon')">Razón Aleatoria</button>
+      <button onclick="copiar('razon')">Copiar</button>
+    </div>
+  </div>
+
+  <!-- Tarjeta Gustar -->
+  <div class="card">
+    <h2>Una cosa que me gusta de ti</h2>
+    <p class="gustar" id="gustar"></p>
+    <p class="contador" id="contadorgustar"></p>
+    <div class="controls">
+      <button onclick="anterior('gustar')">◀ Anterior</button>
+      <button onclick="siguiente('gustar')">Siguiente ▶</button>
+      <button class="btn-purple" onclick="aleatorio('gustar')">Aleatoria</button>
+      <button onclick="copiar('gustar')">Copiar</button>
+    </div>
+  </div>
+
+  <script>
+    const frases = [
+      "Eres más hermosa de lo que crees. Te amo.",
+    ];
+
+    const razones = [
+      "Te amo porque en tus brazos me siento en mi hogar.",
+    ];
+
+    const gustos = [
+      "Me gusta tu hermoso cuerpo.",
+    ];
+
+    let indexFrase = 0;
+    let indexRazon = 0;
+    let indexGustar = 0;
+
+    const fraseEl = document.getElementById("frase");
+    const razonEl = document.getElementById("razon");
+    const gustarEl = document.getElementById("gustar");
+
+    const contadorFrase = document.getElementById("contadorFrase");
+    const contadorRazon = document.getElementById("contadorRazon");
+    const contadorGustar = document.getElementById("contadorgustar");
+
+    function mostrar() {
+      fraseEl.innerText = frases[indexFrase];
+      razonEl.innerText = razones[indexRazon];
+      gustarEl.innerText = gustos[indexGustar];
+
+      contadorFrase.innerText = `Frase ${indexFrase + 1} de ${frases.length}`;
+      contadorRazon.innerText = `Razón ${indexRazon + 1} de ${razones.length}`;
+      contadorGustar.innerText = `Gusto ${indexGustar + 1} de ${gustos.length}`;
+    }
+
+    function anterior(tipo) {
+      if (tipo === "frase") {
+        indexFrase = (indexFrase - 1 + frases.length) % frases.length;
+      } else if (tipo === "razon") {
+        indexRazon = (indexRazon - 1 + razones.length) % razones.length;
+      } else {
+        indexGustar = (indexGustar - 1 + gustos.length) % gustos.length;
+      }
+      mostrar();
+    }
+
+    function siguiente(tipo) {
+      if (tipo === "frase") {
+        indexFrase = (indexFrase + 1) % frases.length;
+      } else if (tipo === "razon") {
+        indexRazon = (indexRazon + 1) % razones.length;
+      } else {
+        indexGustar = (indexGustar + 1) % gustos.length;
+      }
+      mostrar();
+    }
+
+    function aleatorio(tipo) {
+      if (tipo === "frase") {
+        indexFrase = Math.floor(Math.random() * frases.length);
+      } else if (tipo === "razon") {
+        indexRazon = Math.floor(Math.random() * razones.length);
+      } else {
+        indexGustar = Math.floor(Math.random() * gustos.length);
+      }
+      mostrar();
+    }
+
+    function copiar(tipo) {
+      let texto = "";
+      if (tipo === "frase") texto = frases[indexFrase];
+      else if (tipo === "razon") texto = razones[indexRazon];
+      else texto = gustos[indexGustar];
+
+      navigator.clipboard.writeText(texto);
+      alert("Copiado: " + texto);
+    }
+
+    mostrar();
+  </script>
+
+  <p style="max-width:900px; margin-top:30px; line-height:1.8; text-align:justify; color:#f1f5f9;">
+    Amor recuerda esto, no quiero rendirme contigo, me juré a mí mismo que quiero una vida contigo. Bueno, así no fue, yo me juré a mí mismo que daría todo de mí para poder formar algo sólido con la siguiente mujer con la que estuviera y por azares del destino te conocí a ti.
+    Y con el tiempo que transcurrió y las experiencias que vivimos no me cabe duda, Catalina.
+    Tú eres la mujer de mis sueños.
+    Mis acciones y mis palabras muchas veces te han hecho creer lo contrario, pero Catalina no existe ser viviente que ante mis ojos que sea más majestuoso y hermoso que tú.
+    Te amaré en esta vida y si hay algo más después de la muerte sé que te seguiré amando.
+    Una vez termine de configurar la página, quedará inmortalizada en internet, así como mis sentimientos por ti nunca se borrarán, ni la página, ni el amor que siento por ti.
+    Tú serás la primera y única mujer que me motive a hacer algo como esto.
+    Te amo.
+  </p>
+</body>
+</html>
